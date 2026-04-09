@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HairDay - Agendamentos</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <aside class="sidebar">
+      <div class="logo">
+        <span>HairDay</span>
+        <i class="ph ph-scissors"></i>
+      </div>
+
+      <div class="form-header">
+        <h2>Agende um atendimento</h2>
+        <p>Selecione data, horário e informe o nome do cliente para criar o agendamento</p>
+      </div>
+
+      <form id="schedule-form">
+        <div class="input-group">
+          <label>Data</label>
+          <div class="input-wrapper">
+            <i class="ph ph-calendar-blank"></i>
+            <input type="date" id="date-input" required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Horários</label>
+
+          <div class="time-section">
+            <span>Manhã</span>
+            <div class="time-grid" id="morning-times">
+            </div>
+          </div>
+
+          <div class="time-section">
+            <span>Tarde</span>
+            <div class="time-grid" id="afternoon-times">
+            </div>
+          </div>
+
+          <div class="time-section">
+            <span>Noite</span>
+            <div class="time-grid" id="evening-times">
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Cliente</label>
+          <div class="input-wrapper">
+            <i class="ph ph-user"></i>
+            <input type="text" id="client-name" placeholder="Nome do cliente" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">AGENDAR</button>
+      </form>
+    </aside>
+
+    <section class="agenda-section">
+      <header class="agenda-header">
+        <div>
+          <h2>Sua agenda</h2>
+          <p>Consulte os seus cortes de cabelo agendados por dia</p>
+        </div>
+        <div class="date-display">
+          <i class="ph ph-calendar-blank"></i>
+          <input type="date" id="filter-date" class="date-filter-input">
+        </div>
+      </header>
+
+      <div class="agenda-content">
+        <div class="period-block">
+          <div class="period-title">
+            <i class="ph ph-sun"></i> Manhã <span>09h-12h</span>
+          </div>
+          <ul class="schedule-list" id="list-morning"></ul>
+        </div>
+
+        <div class="period-block">
+          <div class="period-title">
+            <i class="ph ph-cloud-sun"></i> Tarde <span>13h-18h</span>
+          </div>
+          <ul class="schedule-list" id="list-afternoon"></ul>
+        </div>
+
+        <div class="period-block">
+          <div class="period-title">
+            <i class="ph ph-moon"></i> Noite <span>19h-21h</span>
+          </div>
+          <ul class="schedule-list" id="list-evening"></ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
